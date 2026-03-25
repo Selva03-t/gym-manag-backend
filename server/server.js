@@ -15,6 +15,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Root route to check if API is running
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/student", studentRoutes);
